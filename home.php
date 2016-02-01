@@ -1,37 +1,43 @@
 <?php
+error_reporting(E_ALL);
 session_start();
-include_once 'dbconnect.php';
 
-if(!isset($_SESSION['user']))
-{
-	header("Location: index.php");
+
+if (!isset($_SESSION['user_name'])) {
+    header("Location: index.php");
 }
-$res=mysqli_query("SELECT * FROM usuarios WHERE id=".$_SESSION['user']);
-$userRow=mysql_fetch_array($res);
+    $mail=$_SESSION['user_name'];
+    $mysqli = mysqli_connect('localhost', 'root', '', 'sistema_administracion');
+  
+    $query2= "SELECT * FROM Usuarios WHERE user='$mail'";
+    $res = mysqli_query($mysqli,$query2);
+    $num_row=  mysqli_num_rows($res);
+    $row = mysqli_fetch_array($res);
+    
 ?>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Welcome - <?php echo $userRow['user_email']; ?></title>
-<link rel="stylesheet" href="style.css" type="text/css" />
-</head>
-<body>
-<div id="header">
-	<div id="left">
-    <label>Coding Cage</label>
-    </div>
-    <div id="right">
-    	<div id="content">
-        	hi' <?php echo $userRow['nombre']; ?>&nbsp;<a href="logout.php?logout">Sign Out</a>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Bienvenido</title>
+        <link rel="stylesheet" href="style.css" type="text/css" />
+    </head>
+    <body>
+        <div id="header">
+            <div id="left">
+                <label>Sistema administrador de imagenes</label>
+            </div>
+            <div id="right">
+                <div id="content">
+                    hola <?php echo $row['nombre']; ?>&nbsp;<a href="logout.php?logout">Cerrar Sesión</a>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
 
-<div id="body">
-	
-    <p>Bienvenido</p>
-</div>
+        <div id="body">
 
-</body>
+            <p>Aqui podras subir todas la imagenes para que puedas visualizar en una galeria</p>
+        </div>
+
+    </body>
 </html>
