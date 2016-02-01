@@ -39,7 +39,7 @@ $res = $mysqli->query("SELECT * FROM galeria");
 while ($row = $res->fetch_assoc()):
 ?>
      <tr>
-          <td><?php echo $row['id'] ?></td>
+          <td><?php echo $row['id_galeria'] ?></td>
           <td><?php echo $row['titulo_galeria'] ?></td>
           <td><?php echo $row['descripcion_corta'] ?></td>
           <td><?php echo $row['descripcion_larga'] ?></td>
@@ -48,8 +48,10 @@ while ($row = $res->fetch_assoc()):
           <td><?php echo $row['fecha_modificacion'] ?></td>
           <td><?php echo $row['seccion_pertenece'] ?></td>
           <td>
-          <a href="update.php?u=<?php echo $row['id'] ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit</a>
-          <a onclick="return confirm('Estas seguro de eliminar el contenido')" href="delete.php?d=<?php echo $row['id'] ?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete</a>
+          <a href="update.php?u=<?php echo $row['id_galeria'] ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</a>
+          </td>
+          <td>
+          <a onclick="return confirm('Estas seguro de eliminar el contenido')" href="delete.php?d=<?php echo $row['id'] ?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
           </td>
      </tr>
 <?php
