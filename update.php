@@ -30,36 +30,36 @@ if(isset($_GET['u'])):
 		<form role="form" method="post">
 		  <input type="hidden" value="<?php echo $row['id_galeria'] ?>" name="id_galeria"/>
 		  <div class="form-group">
-		    <label for="nm">Nombre de la Galeria</label>
+		    <label for="name_galerys">Nombre de la Galeria</label>
 		    <input type="text" class="form-control" name="name_galery" id="nm" value="<?php echo $row['titulo_galeria'] ?>">
 		  </div>
                   <div class="form-group">
-		    <label for="nm"> Descripción Corta</label>
+		    <label for="shor_desc"> Descripción Corta</label>
 		    <input type="text" class="form-control" name="short_desc" id="nm" value="<?php echo $row['descripcion_corta'] ?>">
 		  </div>
                   <div class="form-group">
-		    <label for="ar">Descripción Larga</label>
+		    <label for="long_desc">Descripción Larga</label>
 		    <textarea class="form-control" name="long_desc" id="ar" rows="3"><?php echo $row['descripcion_larga'] ?></textarea>
 		  </div>
 		  <div class="form-group">
-		    <label for="gd">Estatus</label>
+		    <label for="status">Estatus</label>
 		    <select class="form-control" id="gd" name="status">
 		      <option><?php echo $row['estatus'] ?></option>
-		      <option>Male</option>
-		      <option>Female</option>
+                      <option value="activo">Activo</option>
+                      <option value="inactivo">Inactivo</option>
 		    </select>
 		  </div>
                   <div class="form-group">
-		    <label for="ar">Fecha de Creación</label>
-		    <input type="tel" class="form-control" name="creation_date" id="tl" value="<?php echo $row['fecha_creacion'] ?>">
+		    <label for="creation_date">Fecha de Creación</label>
+                    <input type="date" class="form-control" name="creation_date" id="tl" value="<?php echo $row['fecha_creacion'] ?>">
 		  </div>
 		  <div class="form-group">
-		    <label for="tl">Fecha Modificación</label>
-		    <input type="tel" class="form-control" name="modification_date" id="tl" value="<?php echo $row['fecha_modificacion'] ?>">
+		    <label for="modification_date">Fecha Modificación</label>
+                    <input type="date" class="form-control" name="modification_date" id="tl" value="<?php echo $row['fecha_modificacion'] ?>">
 		  </div>
                   <div class="form-group">
-		    <label for="tl">Sección a la que pertence</label>
-		    <input type="tel" class="form-control" name="section" id="tl" value="<?php echo $row['seccion_pertenece'] ?>">
+		    <label for="section">Sección a la que pertence</label>
+		    <input type="text" class="form-control" name="section" id="tl" value="<?php echo $row['seccion_pertenece'] ?>">
 		  </div>
 		  
 		  <button type="submit" name="bts" class="btn btn-default">Modificar</button>

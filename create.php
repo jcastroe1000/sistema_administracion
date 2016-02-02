@@ -64,8 +64,8 @@ endif;
 		  <div class="form-group">
 		    <label for="estatus">Estatus</label>
 		    <select class="form-control" id="gd" name="status">
-                        <option value="true">Activa</option>
-                        <option value="false">Descativa</option>
+                        <option value="activo">Activa</option>
+                        <option value="inactivo">Inactivo</option>
 		    </select>
 		  </div>
 		  <div class="form-group">
