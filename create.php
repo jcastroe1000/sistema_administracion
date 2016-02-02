@@ -6,21 +6,23 @@ include "header.php";
 <?php
 if(isset($_POST['bts'])):
   if($_POST['name_galery']!=null && $_POST['short_description']!=null && $_POST['status']!=null  && $_POST['section']!=null){
-     $stmt = $mysqli->prepare("INSERT INTO galeria(titulo_galeria,descripcion_corta,descripcion_larga,estatus,seccion_pertenece) VALUES (?,?,?,?,?)");
-     $stmt->bind_param('sssss', $name_galery, $short_desc, $long_desc, $status,$section);
+     $stmt = $mysqli->prepare("INSERT INTO galeria(titulo_galeria,descripcion_corta,descripcion_larga,estatus,fecha_creacion,seccion_pertenece) VALUES (?,?,?,?,?,?)");
+     $stmt->bind_param('ssssss', $name_galery, $short_desc, $long_desc, $status,$creation_date,$section);
 
      $name_galery = $_POST['name_galery'];
      $short_desc  = $_POST['short_description'];
      $long_desc   = $_POST['long_description'];
      $status      = $_POST['status'];
+     $creation_date     = $_POST['creation_date'];
      $section     = $_POST['section'];
-
+     
+     
      if($stmt->execute()):
 ?>
 <p></p>
 <div class="alert alert-success alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-  <strong>Éxito!</strong><a href="index.php">Home</a>.
+  <strong>Éxito!</strong><a href="galeria.php">Principal</a>.
 </div>
 <?php
      else:
@@ -68,6 +70,10 @@ endif;
                         <option value="inactivo">Inactivo</option>
 		    </select>
 		  </div>
+                  <div class="form-group">
+		  
+                    <input type="hidden" type="text" class="form-control" name="creation_date" id="" value="<?php echo date("Y/m/d")?>">
+		  </div>  
 		  <div class="form-group">
 		    <label for="section">Seccion a la que pertenece</label>
 		    <input type="text" class="form-control" name="section" id="">
