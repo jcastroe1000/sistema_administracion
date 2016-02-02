@@ -33,11 +33,12 @@ if (!isset($_SESSION['user_name'])) {
                 </div>
             </div>
         </div>
-
         <div id="body">
-
-            <p>Aqui podras subir todas la imagenes para que puedas visualizar en una galeria</p>
+                <p>Aqui podras subir todas la imagenes para que puedas visualizar en una galeria</p>
+                <br/>
         </div>
+        <a href="galeria.php"><p style="text-align: center">Dar de alta galeria</p></a>
+        
 
     </body>
 </html>
