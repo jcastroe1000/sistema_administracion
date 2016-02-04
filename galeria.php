@@ -35,23 +35,23 @@ include "header.php";
 </thead>
 <tbody>
 <?php
-$res = $mysqli->query("SELECT * FROM galeria");
+$res = $mysqli->query("SELECT * FROM galery");
 while ($row = $res->fetch_assoc()):
 ?>
      <tr>
-          <td><?php echo $row['id_galeria'] ?></td>
-          <td><?php echo $row['titulo_galeria'] ?></td>
-          <td><?php echo $row['descripcion_corta'] ?></td>
-          <td><?php echo $row['descripcion_larga'] ?></td>
-          <td><?php echo $row['estatus'] ?></td>
-          <td><?php echo $row['fecha_creacion'] ?></td>
-          <td><?php echo $row['fecha_modificacion'] ?></td>
-          <td><?php echo $row['seccion_pertenece'] ?></td>
+          <td><?php echo $row['id_galery'] ?></td>
+          <td><?php echo $row['title_galery'] ?></td>
+          <td><?php echo $row['short_description'] ?></td>
+          <td><?php echo $row['long_description'] ?></td>
+          <td><?php echo $row['status'] ?></td>
+          <td><?php echo $row['creation_date'] ?></td>
+          <td><?php echo $row['modification_date'] ?></td>
+          <td><?php echo $row['section'] ?></td>
           <td>
-          <a href="update.php?u=<?php echo $row['id_galeria'] ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</a>
+          <a href="update.php?u=<?php echo $row['id_galery'] ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</a>
           </td>
           <td>
-          <a onclick="return confirm('Estas seguro de eliminar el contenido')" href="delete.php?d=<?php echo $row['id_galeria'] ?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
+          <a onclick="return confirm('Estas seguro de eliminar el contenido')" href="delete.php?d=<?php echo $row['id_galery'] ?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
           </td>
      </tr>
 <?php

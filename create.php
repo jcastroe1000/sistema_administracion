@@ -6,7 +6,7 @@ include "header.php";
 <?php
 if(isset($_POST['bts'])):
   if($_POST['name_galery']!=null && $_POST['short_description']!=null && $_POST['status']!=null  && $_POST['section']!=null){
-     $stmt = $mysqli->prepare("INSERT INTO galeria(titulo_galeria,descripcion_corta,descripcion_larga,estatus,fecha_creacion,seccion_pertenece) VALUES (?,?,?,?,?,?)");
+     $stmt = $mysqli->prepare("INSERT INTO galery(title_galery,short_description,long_description,status,creation_date,section) VALUES (?,?,?,?,?,?)");
      $stmt->bind_param('ssssss', $name_galery, $short_desc, $long_desc, $status,$creation_date,$section);
 
      $name_galery = $_POST['name_galery'];
