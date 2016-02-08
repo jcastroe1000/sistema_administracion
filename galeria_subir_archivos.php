@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Galerias</title>
 <link rel="stylesheet" href="style.css" type="text/css" />
+<link rel="stylesheet" href="css/estilo.css" type="text/css" />
 </head>
 <body>
 <center>
@@ -41,6 +42,7 @@ while ($row = $res->fetch_assoc()):
      <tr>
           <td><?php echo $row['id_content'] ?></td>
           <td><?php echo $row['title'] ?></td>
+          <td><?php echo '<img src="php/album/' . $row['route'] . '" class="img-subida" >'?></img></td>
           <td><?php echo $row['short_description'] ?></td>
           <td><?php echo $row['long_description'] ?></td>
           <td><?php echo $row['status'] ?></td>
@@ -51,7 +53,7 @@ while ($row = $res->fetch_assoc()):
           <a href="update_file.php?u=<?php echo $row['id_content'] ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</a>
           </td>
           <td>
-          <a onclick="return confirm('Estas seguro de eliminar el contenido')" href="delete.php?d=<?php echo $row['id_galery'] ?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
+              <a onclick="return confirm('Estas seguro de eliminar el contenido')" href="delete_file.php?d=<?php echo $row['id_content'] ?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
           </td>
      </tr>
 <?php
