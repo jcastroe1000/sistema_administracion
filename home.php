@@ -38,6 +38,8 @@ if (!isset($_SESSION['user_name'])) {
                 <br/>
         </div>
         <a href="galeria.php"><p style="text-align: center">Dar de alta galeria</p></a>
+        <br></br>
+        <a href="galeria_subir_archivos.php"><p style="text-align: center">Subir Imagenes</p></a>
         
 
     </body>
