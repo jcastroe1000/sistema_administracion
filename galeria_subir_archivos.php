@@ -46,9 +46,9 @@ while ($row = $res->fetch_assoc()):
           <td><?php echo $row['status'] ?></td>
           <td><?php echo $row['creation_date'] ?></td>
           <td><?php echo $row['modification_date'] ?></td>
-          <td><?php echo $row['section'] ?></td>
+          
           <td>
-          <a href="update.php?u=<?php echo $row['id_galery'] ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</a>
+          <a href="update_file.php?u=<?php echo $row['id_content'] ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</a>
           </td>
           <td>
           <a onclick="return confirm('Estas seguro de eliminar el contenido')" href="delete.php?d=<?php echo $row['id_galery'] ?>"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
