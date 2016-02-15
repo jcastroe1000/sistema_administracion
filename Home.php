@@ -9,6 +9,7 @@ if (!isset($_SESSION['user_name'])) {
     
 }
 $mail = $_SESSION['user_name'];
+
 $mysqli = mysqli_connect('localhost', 'root', '', 'sistema_administracion');
 
 $query2 = "SELECT * FROM Usuarios WHERE user='$mail'";

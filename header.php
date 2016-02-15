@@ -21,3 +21,4 @@
             <p><br/></p>
             <div class="panel panel-default">
                 <div class="panel-body">
+                    <a href="logout.php?logout">Cerrar Sesión</a>

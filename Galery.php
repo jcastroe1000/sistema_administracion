@@ -14,12 +14,16 @@
                 </div>
             </div>
             <?php
+            
             include "config.php";
             include "header.php";
+            session_start();
             if (!isset($_SESSION['user_name'])) {
-                $_SESSION['user_name'];
-                header("Location: index.php");
-            }
+    
+             header("Location: index.php");
+    
+}
+            
             ?>
             <p>
                 <a href="create.php" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir Nueva Categoria</a><br/>

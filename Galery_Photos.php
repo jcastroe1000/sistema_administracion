@@ -17,7 +17,7 @@
             <?php
             include "config.php";
             include "header.php";
-    
+            
             ?>
             <p>
                 <a href="Create_File.php" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir Nuevo Archivo</a><br/>
@@ -38,6 +38,13 @@
                 </thead>
                 <tbody>
                     <?php
+                    session_start();
+                    if (!isset($_SESSION['user_name'])) {
+
+                        header("Location: index.php");
+                    }
+
+
                     $res = $mysqli->query("SELECT * FROM content");
                     while ($row = $res->fetch_assoc()):
                         ?>
