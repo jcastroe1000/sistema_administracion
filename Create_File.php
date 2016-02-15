@@ -1,6 +1,6 @@
 <?php
-
 include "header.php";
+
 ?>
 <script src="js/jquery.js"></script>
 <script src="js/subir.js"></script>
@@ -22,25 +22,26 @@ include "header.php";
                 <label for="short_description">Descripcion Corta</label>
                 <input type="text" id="desc_short" class="form-control" name="desc_short" placeholder="Enter Name">
             </div>
-             <div class="form-group">
+            <div class="form-group">
                 <label for="short_description">Descripcion larga</label>
                 <input type="text" id="desc_long" class="form-control" name="desc_long" placeholder="Enter Name">
             </div>
             <div class="form-group">
-		    <label for="estatus">Estatus</label>
-		    <select class="form-control" id="status" name="status">
-                        <option value="activo">Activa</option>
-                        <option value="inactivo">Inactivo</option>
-		    </select>
+                <label for="estatus">Estatus</label>
+                <select class="form-control" id="status" name="status">
+                    <option value="activo">Activa</option>
+                    <option value="inactivo">Inactivo</option>
+                </select>
             </div>
             <div class="form-group">
-		  
-                    <input type="hidden" type="text" class="form-control" name="creation_date" id="creation_date" value="<?php echo date("Y/m/d")?>">
+
+                <input type="hidden" type="text" class="form-control" name="creation_date" id="creation_date" value="<?php echo date("Y/m/d") ?>">
             </div>
 
             <button type="submit"  class="btn btn-default">Guardar</button>
         </form>
-        <?php
-
-        include "footer.php";
-        ?>
+    </div>
+</div>
+<?php
+include "footer.php";
+?>

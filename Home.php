@@ -4,16 +4,17 @@ session_start();
 
 
 if (!isset($_SESSION['user_name'])) {
-    header("Location: index.php");
-}
-    $mail=$_SESSION['user_name'];
-    $mysqli = mysqli_connect('localhost', 'root', '', 'sistema_administracion');
-  
-    $query2= "SELECT * FROM Usuarios WHERE user='$mail'";
-    $res = mysqli_query($mysqli,$query2);
-    $num_row=  mysqli_num_rows($res);
-    $row = mysqli_fetch_array($res);
     
+    header("Location: index.php");
+    
+}
+$mail = $_SESSION['user_name'];
+$mysqli = mysqli_connect('localhost', 'root', '', 'sistema_administracion');
+
+$query2 = "SELECT * FROM Usuarios WHERE user='$mail'";
+$res = mysqli_query($mysqli, $query2);
+$num_row = mysqli_num_rows($res);
+$row = mysqli_fetch_array($res);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -34,13 +35,13 @@ if (!isset($_SESSION['user_name'])) {
             </div>
         </div>
         <div id="body">
-                <p>Aqui podras subir todas la imagenes para que puedas visualizar en una galeria</p>
-                <br/>
+            <p>Aqui podras subir todas la imagenes para que puedas visualizar en una galeria</p>
+            <br/>
         </div>
-        <a href="galeria.php"><p style="text-align: center">Dar de alta galeria</p></a>
+        <a href="Galery.php"><p style="text-align: center">Dar de alta galeria</p></a>
         <br></br>
-        <a href="galeria_subir_archivos.php"><p style="text-align: center">Subir Imagenes</p></a>
-        
+        <a href="Galery_Photos.php"><p style="text-align: center">Subir Imagenes</p></a>
+
 
     </body>
 </html>

@@ -3,7 +3,7 @@ session_start();
 
 
 if (isset($_SESSION['user']) != "") {
-    header("Location: home.php");
+    header("Location: Home.php");
 }
 
 if (isset($_POST['btn-login'])) {
@@ -21,8 +21,7 @@ if (isset($_POST['btn-login'])) {
     if ($num_row >= 1) {
         echo 'true';
         $_SESSION['user_name'] = $row['user'];
-        header("Location:home.php");
-        
+        header("Location:Home.php");
     } else {
         ?>
         <script>alert('Username / Password Seems Wrong !');</script>
