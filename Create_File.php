@@ -4,12 +4,19 @@ include "header.php";
 ?>
 <script src="js/jquery.js"></script>
 <script src="js/subir.js"></script>
+<script src="js/bootbox.js"></script>
+<script src="js/bootbox.min.js"></script>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+         <script src="js/bootbox.min.js"></script>
 <p><br/></p>
 
 <div class="panel panel-default">
     <div class="panel-body">
 
         <form  id="subida">
+     
             <div class="form-group">
                 <label for="name_galery">Titulo</label>
                 <input type="text" class="form-control" name="title" id="title" placeholder="Enter Name">
