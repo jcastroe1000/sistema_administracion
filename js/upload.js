@@ -48,7 +48,9 @@ $(function () {
             if (imagen.length == 0)
 
             {
-                $('#foto').after('<div class="alert alert-danger">No has seleccionado ningun archivo</div>');
+              //  $('#foto').after('<div class="alert alert-danger">No has seleccionado ningun archivo</div>');
+                
+                bootbox.alert("No has seleccionado ningun archivo");
                 return false;
             }
             else
@@ -64,17 +66,18 @@ $(function () {
                     if (imagen[x].type != "image/png" && imagen[x].type != "image/jpg" && imagen[x].type != "image/jpeg" && imagen[x].type != "image/gif")
 
                     {
-                        $('#foto').after('<div class="alert alert-danger">El archivo ' + imagen[x].name + '  no es una imagen, selecciona una imagen</div>');
-
+                        //$('#foto').after('<div class="alert alert-danger">El archivo ' + imagen[x].name + '  no es una imagen, selecciona una imagen</div>');
+                        bootbox.alert("El archivo" + imagen[x].name+ " no es una imagen");    
                         return false;
 
                     }
 
 
-                    if (imagen[x].size > 1024 * 1024 * 3)
+                    if (imagen[x].size > 1024 * 1024 * 2)
 
                     {
-                        $('#foto').after('<div class="alert alert-danger">La imagen ' + imagen[x].name + '  pesa mas de 3 MB selescciona otro archivo</div>');
+                        //$('#foto').after('<div class="alert alert-danger">La imagen ' + imagen[x].name + '  pesa mas de 3 MB selescciona otro archivo</div>');
+                        bootbox.alert("El archivo   " + imagen[x].name+ " sobrepasa el peso permitido");    
                         return  false;
                     }
                 }
