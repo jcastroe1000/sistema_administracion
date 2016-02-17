@@ -1,14 +1,17 @@
+
+<br>
+<a href="Galery.php" class="btn btn-success btn-md"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
 <?php
 include "config.php";
-include "header.php";
-if (!isset($_SESSION['user_name'])) {
+            include "header.php";
+            session_start();
+            if (!isset($_SESSION['user_name'])) {
     
-    header("Location: index.php");
+             header("Location: index.php");
     
 }
-?>
-<a href="galeria.php" class="btn btn-success btn-md"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
-<?php
+            
+            
 if (isset($_POST['bts'])):
     if ($_POST['name_galery'] != null && $_POST['short_description'] != null && $_POST['status'] != null && $_POST['section'] != null) {
         $stmt = $mysqli->prepare("INSERT INTO galery(title_galery,short_description,long_description,status,creation_date,section) VALUES (?,?,?,?,?,?)");

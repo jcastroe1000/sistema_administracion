@@ -1,9 +1,18 @@
 <?php
-include "header.php";
-
+include "config.php";
+            include "header.php";
+            session_start();
+            if (!isset($_SESSION['user_name'])) {
+    
+             header("Location: index.php");
+    
+}
+     
+            
+           
 ?>
 <script src="js/jquery.js"></script>
-<script src="js/subir.js"></script>
+<script src="js/upload.js"></script>
 <script src="js/bootbox.js"></script>
 <script src="js/bootbox.min.js"></script>
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
