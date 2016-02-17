@@ -12,7 +12,7 @@ $mail = $_SESSION['user_name'];
 
 $mysqli = mysqli_connect('localhost', 'root', '', 'sistema_administracion');
 
-$query2 = "SELECT * FROM Usuarios WHERE user='$mail'";
+$query2 = "SELECT * FROM Users WHERE user='$mail'";
 $res = mysqli_query($mysqli, $query2);
 $num_row = mysqli_num_rows($res);
 $row = mysqli_fetch_array($res);

@@ -14,7 +14,7 @@ if (isset($_POST['btn-login'])) {
 
     $email = trim($email);
 
-    $query = "SELECT * FROM Usuarios WHERE user='$email' AND password='$pass'";
+    $query = "SELECT * FROM Users WHERE user='$email' AND password='$pass'";
     $result = mysqli_query($mysqli, $query)or die(mysqli_error());
     $num_row = mysqli_num_rows($result);
     $row = mysqli_fetch_array($result);
