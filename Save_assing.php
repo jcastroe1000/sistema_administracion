@@ -11,6 +11,7 @@
             mysqli_query($mysqli,"INSERT INTO content_galery (id_content,id_galery) 
                   VALUES ('".$id_image."',".mysqli_real_escape_string($mysqli,$g).")");
       }
+      header('Location: Galery_Photos.php');
     }
     
     ?>
