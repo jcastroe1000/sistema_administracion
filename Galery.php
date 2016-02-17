@@ -74,7 +74,7 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-default" data-dismiss="modal">Cerrrar</button>
-                                        <a href="Delete.php?d=<?php echo $row['id_content'] ?>"><button type="button" class="btn btn-primary">Aceptar</button></a>
+                                        <a href="Delete.php?d=<?php echo $row['id_galery'] ?>"><button type="button" class="btn btn-primary">Aceptar</button></a>
                                     </div>
                                 </div>
                             </div>
