@@ -39,9 +39,11 @@ $row = mysqli_fetch_array($res);
             <p>Aqui podras subir todas la imagenes para que puedas visualizar en una galeria</p>
             <br/>
         </div>
-        <a href="Galery.php"><p style="text-align: center">Dar de alta galeria</p></a>
+        <a href="Galery.php"><p style="text-align: center">Galerias</p></a>
         <br></br>
-        <a href="Galery_Photos.php"><p style="text-align: center">Subir Imagenes</p></a>
+        <a href="Galery_Photos.php"><p style="text-align: center">Imagenes</p></a>
+        <br></br>
+        <a href="Photos_Published.php"><p style="text-align: center">Fotos Publicadas</p></a>
 
 
     </body>
