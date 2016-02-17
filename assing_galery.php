@@ -1,6 +1,13 @@
 <?php
     error_reporting(E_ALL);
-    include "header.php";
+        include "config.php";
+            include "header.php";
+            session_start();
+            if (!isset($_SESSION['user_name'])) {
+    
+             header("Location: index.php");
+    
+}
     $mysqli = mysqli_connect('localhost', 'root', '', 'sistema_administracion');
     $res = $mysqli->query("SELECT * FROM content WHERE id_content=" . $_GET['u']);
     $row = $res->fetch_assoc();
@@ -10,7 +17,7 @@
 <p><br/></p>
 <div class="panel panel-default">
     <div class="panel-body">
-        <form  id="subida">
+        <form  action="Save_assing.php" method="post">
             <input type="hidden" value="<?php echo $row['id_content'] ?>" name="id_content"/>
             <div  style="height: "  >
             <?php echo '<img src="php/album/' . $row['route'] . '" class="img-subida" style="width:auto;height:auto">' ?>

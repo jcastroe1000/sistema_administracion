@@ -26,7 +26,7 @@
             
             ?>
             <p>
-                <a href="create.php" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir Nueva Categoria</a><br/>
+                <a href="Create.php" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir Nueva Categoria</a><br/>
             </p>
             <table id="ghatable" class="display table table-bordered table-stripe" cellspacing="0" width="100%">
                 <thead>

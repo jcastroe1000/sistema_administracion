@@ -33,7 +33,7 @@
                         <th>Estatus</th>
                         <th>Fecha de Creación</th>
                         <th>Fecha de Modificación</th>
-                        <th>Galeria pertenece</th>
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -57,12 +57,15 @@
                             <td><?php echo $row['status'] ?></td>
                             <td><?php echo $row['creation_date'] ?></td>
                             <td><?php echo $row['modification_date'] ?></td>
-
+                         
                             <td>
                                 <a class="btn btn-lg btn-success" href="Update_Photo.php?u=<?php echo $row['id_content'] ?>"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar</a>
                             </td>
                             <td>
                                 <a class="btn btn-lg btn-danger" data-toggle="modal" data-target="#basicModal" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
+                            </td>
+                            <td>
+                                <a class="btn btn-lg btn-primary" href="assing_galery.php?u=<?php echo $row['id_content'] ?>"  >Galeria</a>
                             </td>
                         </tr>
                     <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
