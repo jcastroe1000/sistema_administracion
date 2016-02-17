@@ -26,12 +26,13 @@ if (isset($_POST['bts'])):
 
 
         if ($stmt->execute()):
+            header('Location: Galery.php');
             ?>
-            <p></p>
+           <!-- <p></p>
             <div class="alert alert-success alert-dismissible" role="alert">
                 <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                <strong>Éxito!</strong><a href="galeria.php">Principal</a>.
-            </div>
+                <strong>Galeria Ingresada correctamente,Felicadades!</strong><a href="Galery.php">Principal</a>.
+            </div>-->
             <?php
         else:
             ?>

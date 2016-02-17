@@ -19,7 +19,7 @@ if (isset($_GET['u'])):
         $m_date_photo = $_POST['md'];
         $id_content = $_POST['id_content'];
         if ($stmt->execute()):
-            echo "<script>location.href='galeria_subir_archivos.php'</script>";
+            echo "<script>location.href='Galery_Photos.php'</script>";
         else:
             echo "<script>alert('" . $stmt->error . "')</script>";
         endif;
@@ -32,16 +32,13 @@ if (isset($_GET['u'])):
     <div class="panel panel-default">
         <div class="panel-body">
 
-            <form  id="subida">
+            <form  role="form" method="post">
                 <input type="hidden" value="<?php echo $row['id_content'] ?>" name="id_content"/>
                 <div class="form-group">
                     <label for="nm">Nombre de la Galeria</label>
                     <input type="text" class="form-control" name="title" id="title" value="<?php echo $row['title'] ?>">
                 </div>
-                <div class="form-group">
-                    <label for="name_galery">Imagen</label>
-                    <input type="file" id="sust_foto" name="sust_foto"/> 
-                </div>
+                
                 <div class="form-group">
                     <label for="tl">Descripcion Corta</label>
                     <input type="tel" class="form-control" name="sd" id="sd" value="<?php echo $row['short_description'] ?>">
