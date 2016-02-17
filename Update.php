@@ -66,6 +66,7 @@ if (isset($_GET['u'])):
                 </div>
                 <button type="submit" name="bts" class="btn btn-default">Guardar Cambios</button>
             </form>
+        </div>
             <?php
         endif;
         include "footer.php";
