@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_name'])) {
 }
 $mail = $_SESSION['user_name'];
 
-$mysqli = mysqli_connect('localhost', 'root', '', 'sistema_administracion');
+$mysqli = mysqli_connect('localhost', 'root', '', 'sistem_galery');
 
 $query2 = "SELECT * FROM Users WHERE user='$mail'";
 $res = mysqli_query($mysqli, $query2);
