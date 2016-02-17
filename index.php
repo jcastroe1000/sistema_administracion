@@ -7,7 +7,7 @@ if (isset($_SESSION['user_name']) != "") {
 }
 
 if (isset($_POST['btn-login'])) {
-    $mysqli = mysqli_connect('localhost', 'root', '', 'sistema_administracion');
+    $mysqli = mysqli_connect('localhost', 'root', '', 'sistem_galery');
 
     $email = mysql_real_escape_string($_POST['email']);
     $pass = mysql_real_escape_string($_POST['pass']);

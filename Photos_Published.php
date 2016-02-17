@@ -26,7 +26,7 @@
 
 
 
-                $mysqli = mysqli_connect('localhost', 'root', '', 'sistema_administracion');
+                $mysqli = mysqli_connect('localhost', 'root', '', 'sistem_galery');
                 $query = "SELECT * FROM content";
 
                 $comprobar = mysqli_query($mysqli, $query)or die(mysqli_error());

@@ -2,7 +2,7 @@
 
 error_reporting(E_ALL);
 
-$mysqli = mysqli_connect('localhost', 'root', '', 'sistema_administracion');
+$mysqli = mysqli_connect('localhost', 'root', '', 'sistem_galery');
 $title = $_GET['title'];
 $sd = $_GET['desc_short'];
 $ld = $_GET['desc_long'];

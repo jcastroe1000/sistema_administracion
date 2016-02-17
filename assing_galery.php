@@ -8,7 +8,7 @@
              header("Location: index.php");
     
 }
-    $mysqli = mysqli_connect('localhost', 'root', '', 'sistema_administracion');
+    $mysqli = mysqli_connect('localhost', 'root', '', 'sistem_galery');
     $res = $mysqli->query("SELECT * FROM content WHERE id_content=" . $_GET['u']);
     $row = $res->fetch_assoc();
     $mysqli->close();
@@ -26,7 +26,7 @@
             <h4>Galerias Disponibles</h4>
             <select name="galery[]" multiple="multiple">
             <?php
-                $mysqli2 = mysqli_connect('localhost', 'root', '', 'sistema_administracion');
+                $mysqli2 = mysqli_connect('localhost', 'root', '', 'sistem_galery');
                 $condition=activo;
                 
                 $sql = "SELECT * from galery WHERE status='".$condition."'";
