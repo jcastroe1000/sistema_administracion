@@ -8,7 +8,7 @@ if (isset($_GET['d'])):
     $id = $_GET['d'];
 
     if ($stmt->execute()):
-        echo "<script>location.href='galeria.php'</script>";
+        echo "<script>location.href='Galery.php'</script>";
     else:
         echo "<script>alert('" . $stmt->error . "')</script>";
     endif;
