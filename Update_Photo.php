@@ -26,6 +26,7 @@ if (isset($_GET['u'])):
     endif;
     $res = $mysqli->query("SELECT * FROM content WHERE id_content=" . $_GET['u']);
     $row = $res->fetch_assoc();
+    endif;
     ?>
 
     <p><br/></p>
@@ -49,11 +50,19 @@ if (isset($_GET['u'])):
                 </div>
                 <div class="form-group">
                     <label for="gd">Estatus de la galeria</label>
-                    <select class="form-control" id="st" name="st">
-                        <option><?php echo $row['status'] ?></option>
-                        <option>Activo</option>
-                        <option>Inactivo</option>
-                    </select>
+                    <?php if ($row['status'] == 'activo') { ?>
+                        <select class="form-control" id="st" name="st">
+                            <option><?php echo $row['status'] ?></option>
+
+                            <option>Inactivo</option>
+                        </select>
+                    <?php } else {?>
+                        <select class="form-control" id="st" name="status">
+                            <option><?php echo $row['status'] ?></option>
+
+                            <option>activo</option>
+                        </select>
+                    <?php } ?>
                 </div>
                 <div class="form-group">
                     <label for="ar">Fecha de Creacion</label>
@@ -68,6 +77,6 @@ if (isset($_GET['u'])):
         </div>
     </div>
             <?php
-        endif;
+        
         include "footer.php";
         ?>

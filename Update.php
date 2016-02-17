@@ -27,6 +27,7 @@ if (isset($_GET['u'])):
     endif;
     $res = $mysqli->query("SELECT * FROM galery WHERE id_galery=" . $_GET['u']);
     $row = $res->fetch_assoc();
+endif;
     ?>
 
     <p><br/></p>
@@ -50,10 +51,20 @@ if (isset($_GET['u'])):
                 </div>
                 <div class="form-group">
                     <label for="gd">Estatus de la galeria</label>
-                    <select class="form-control" id="gd" name="status">
-                        <option><?php echo $row['status'] ?></option>
-                        <option>Activo</option>
-                        <option>Inactivo</option>
+                    <?php if ($row['status'] == 'activo') { ?>
+                        <select class="form-control" id="st" name="status">
+                            <option><?php echo $row['status'] ?></option>
+
+                            <option>Inactivo</option>
+                        </select>
+                    <?php } else {?>
+                        <select class="form-control" id="st" name="status">
+                            <option><?php echo $row['status'] ?></option>
+
+                            <option>activo</option>
+                        </select>
+                    <?php } ?>
+
                     </select>
                 </div>
                 <div class="form-group">
@@ -67,7 +78,9 @@ if (isset($_GET['u'])):
                 <button type="submit" name="bts" class="btn btn-default">Guardar Cambios</button>
             </form>
         </div>
+        
             <?php
-        endif;
+            
+        
         include "footer.php";
         ?>
