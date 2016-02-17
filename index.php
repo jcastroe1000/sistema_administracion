@@ -48,7 +48,7 @@ if (isset($_POST['btn-login'])) {
                             <td><input type="password" name="pass" placeholder="Your Password" required /></td>
                         </tr>
                         <tr>
-                            <td><button type="submit" name="btn-login">Sign In</button></td>
+                            <td><button type="submit" name="btn-login">Entrar</button></td>
                         </tr>
                        
                     </table>
