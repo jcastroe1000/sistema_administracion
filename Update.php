@@ -1,11 +1,12 @@
 <?php
 include "config.php";
 include "header.php";
-if (!isset($_SESSION['user_name'])) {
-    
+session_start();
+    if (!isset($_SESSION['user_name'])) {
     header("Location: index.php");
     
 }
+  
 if (isset($_GET['u'])):
     if (isset($_POST['bts'])):
         $stmt = $mysqli->prepare("UPDATE galery SET title_galery=?, short_description=?, long_description=?, status=?,modification_date=?,section=? WHERE id_galery=?");
@@ -19,7 +20,7 @@ if (isset($_GET['u'])):
         $section_galery = $_POST['section'];
         $id_galery = $_POST['id_galery'];
         if ($stmt->execute()):
-            echo "<script>location.href='galeria.php'</script>";
+            echo "<script>location.href='Galery.php'</script>";
         else:
             echo "<script>alert('" . $stmt->error . "')</script>";
         endif;

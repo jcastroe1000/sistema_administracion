@@ -1,11 +1,12 @@
 <?php
 include "config.php";
 include "header.php";
-if (!isset($_SESSION['user_name'])) {
-    
+session_start();
+    if (!isset($_SESSION['user_name'])) {
     header("Location: index.php");
     
 }
+
 if (isset($_GET['u'])):
     $id = $_GET['u'];
     if (isset($_POST['bts'])):
