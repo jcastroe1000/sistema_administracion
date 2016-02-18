@@ -6,24 +6,18 @@
         <link rel="stylesheet" href="style.css" type="text/css" />
     </head>
     <body>
-        <center>
-
-            <div id="header">
-                <div id="content">
-                    <label>CRUD Galerias</label>
-                </div>
+        <div id="header">
+            <div id="content">
+                <label>CRUD Galerias</label>
             </div>
+        </div>
             <?php
-            
-            include "config.php";
-            include "header.php";
-            session_start();
-            if (!isset($_SESSION['user_name'])) {
-    
-             header("Location: index.php");
-    
-}
-            
+                include "config.php";
+                include "header.php";
+                session_start();
+                if (!isset($_SESSION['user_name'])) {
+                    header("Location: index.php");
+                }
             ?>
             <p>
                 <a href="Create.php" class="btn btn-primary btn-md"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Añadir Nueva Categoria</a><br/>
@@ -43,9 +37,10 @@
                 </thead>
                 <tbody>
                     <?php
-                    $res = $mysqli->query("SELECT * FROM galery");
-                    while ($row = $res->fetch_assoc()):
-                        ?>
+                        $res = $mysqli->query("SELECT * FROM galery");
+                        $mysqli->close();
+                        while ($row = $res->fetch_assoc()):
+                    ?>
                         <tr>
                             <td><?php echo $row['id_galery'] ?></td>
                             <td><?php echo $row['title_galery'] ?></td>
@@ -80,8 +75,8 @@
                             </div>
                         </div>
                         <?php
-                    endwhile;
-                    ?>
+                            endwhile;
+                        ?>
                 </tbody>
             </table>	    
             <?php

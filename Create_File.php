@@ -1,31 +1,23 @@
 <?php
-include "config.php";
-            include "header.php";
-            session_start();
-            if (!isset($_SESSION['user_name'])) {
-    
-             header("Location: index.php");
-    
-}
-     
-            
-           
+    include "config.php";
+    include "header.php";
+    session_start();
+    if (!isset($_SESSION['user_name'])) {
+        header("Location: index.php");
+    }
 ?>
 <script src="js/jquery.js"></script>
 <script src="js/upload.js"></script>
 <script src="js/bootbox.js"></script>
 <script src="js/bootbox.min.js"></script>
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-         <script src="js/bootbox.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<script src="js/bootbox.min.js"></script>
 <p><br/></p>
-
 <div class="panel panel-default">
     <div class="panel-body">
-
         <form  id="subida">
-     
             <div class="form-group">
                 <label for="name_galery">Titulo</label>
                 <input type="text" class="form-control" name="title" id="title" placeholder="Enter Name">
@@ -50,10 +42,8 @@ include "config.php";
                 </select>
             </div>
             <div class="form-group">
-
                 <input type="hidden" type="text" class="form-control" name="creation_date" id="creation_date" value="<?php echo date("Y/m/d") ?>">
             </div>
-
             <button type="submit"  class="btn btn-default">Guardar</button>
         </form>
     </div>

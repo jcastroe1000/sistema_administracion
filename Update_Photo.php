@@ -1,15 +1,14 @@
 <?php
-include "config.php";
-include "header.php";
-session_start();
+    include "config.php";
+    include "header.php";
+    session_start();
     if (!isset($_SESSION['user_name'])) {
-    header("Location: index.php");
-    
-}
+        header("Location: index.php");
+    }
 
-if (isset($_GET['u'])):
-    $id = $_GET['u'];
-    if (isset($_POST['bts'])):
+    if (isset($_GET['u'])):
+        $id = $_GET['u'];
+        if (isset($_POST['bts'])):
         $stmt = $mysqli->prepare("UPDATE content SET title=?,short_description=?, long_description=?, status=?,modification_date=? WHERE id_content=?");
         $stmt->bind_param('ssssss', $title, $short_d, $long_d, $status_photo, $m_date_photo, $id_content);
         $title = $_POST['title'];
@@ -24,15 +23,16 @@ if (isset($_GET['u'])):
             echo "<script>alert('" . $stmt->error . "')</script>";
         endif;
     endif;
-    $res = $mysqli->query("SELECT * FROM content WHERE id_content=" . $_GET['u']);
-    $row = $res->fetch_assoc();
+        $res = $mysqli->query("SELECT * FROM content WHERE id_content=" . $_GET['u']);
+        $row = $res->fetch_assoc();
+        $mysqli->close();
     endif;
-    ?>
+?>
 
     <p><br/></p>
+    <a href="Galery_Photos.php" class="btn btn-success btn-md"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Regresar</a>
     <div class="panel panel-default">
         <div class="panel-body">
-
             <form  role="form" method="post">
                 <input type="hidden" value="<?php echo $row['id_content'] ?>" name="id_content"/>
                 <div class="form-group">
@@ -50,19 +50,17 @@ if (isset($_GET['u'])):
                 </div>
                 <div class="form-group">
                     <label for="gd">Estatus de la galeria</label>
-                    <?php if ($row['status'] == 'activo') { ?>
+                        <?php if ($row['status'] == 'activo') { ?>
+                            <select class="form-control" id="st" name="st">
+                                <option><?php echo $row['status'] ?></option>
+                                <option>Inactivo</option>
+                            </select>
+                        <?php } else {?>
                         <select class="form-control" id="st" name="st">
                             <option><?php echo $row['status'] ?></option>
-
-                            <option>Inactivo</option>
-                        </select>
-                    <?php } else {?>
-                        <select class="form-control" id="st" name="status">
-                            <option><?php echo $row['status'] ?></option>
-
                             <option>activo</option>
                         </select>
-                    <?php } ?>
+                         <?php } ?>
                 </div>
                 <div class="form-group">
                     <label for="ar">Fecha de Creacion</label>
@@ -71,12 +69,10 @@ if (isset($_GET['u'])):
                 <div class="form-group">
                     <input type="hidden" class="form-control" name="md" id="tl" value="<?php echo date("Y/m/d") ?>">
                 </div>
-
                 <button type="submit" name="bts" class="btn btn-default">Guardar Cambios</button>
             </form>
         </div>
     </div>
-            <?php
-        
-        include "footer.php";
-        ?>
+<?php
+    include "footer.php";
+?>
