@@ -7,18 +7,17 @@
     }
 if (isset($_POST['bts'])):
     if ($_POST['name_galery'] != null && $_POST['short_description'] != null && $_POST['status'] != null && $_POST['section'] != null) {
-    $stmt = $mysqli->prepare("INSERT INTO galery(title_galery,short_description,long_description,status,creation_date,section) VALUES (?,?,?,?,?,?)");
-    $stmt->bind_param('ssssss', $name_galery, $short_desc, $long_desc, $status, $creation_date, $section);
-    
-    $name_galery = $_POST['name_galery'];
-    $short_desc = $_POST['short_description'];
-    $long_desc = $_POST['long_description'];
-    $status = $_POST['status'];
-    $creation_date = $_POST['creation_date'];
-    $section = $_POST['section'];
+        $stmt = $mysqli->prepare("INSERT INTO galery(title_galery,short_description,long_description,status,creation_date,section) VALUES (?,?,?,?,?,?)");
+        $stmt->bind_param('ssssss', $name_galery, $short_desc, $long_desc, $status, $creation_date, $section);
+        $name_galery = $_POST['name_galery'];
+        $short_desc = $_POST['short_description'];
+        $long_desc = $_POST['long_description'];
+        $status = $_POST['status'];
+        $creation_date = $_POST['creation_date'];
+        $section = $_POST['section'];
         if ($stmt->execute()):
             $mysqli->close();
-        header('Location: Galery.php');
+            header('Location: Galery.php');
 ?>
            <!-- <p></p>
             <div class="alert alert-success alert-dismissible" role="alert">

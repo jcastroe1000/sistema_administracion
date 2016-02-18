@@ -19,10 +19,10 @@
                     }
                     $query = "SELECT * FROM content";
                     $comprobar = mysqli_query($mysqli, $query)or die(mysqli_error());
-                    $mysqli->close(); //cerramos la conexió
                     $num_row = mysqli_num_rows($comprobar);
                     if ($num_row >= 1) {
                         $fotos = mysqli_query($mysqli, "SELECT * FROM content ORDER BY id_content ASC");
+                        $mysqli->close(); //cerramos la conexió
                         while ($fotos2 = mysqli_fetch_array($fotos)) {
                         echo '<li><a href="php/album/' . $fotos2['route'] . '" target="_blank"><img src="php/album/' . $fotos2['route'] . '" class="img-subida" title="' . $fotos2['short_description'] . '"></a></li>';
                         }

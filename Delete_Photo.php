@@ -4,7 +4,6 @@ include "config.php";
         $stmt = $mysqli->prepare("DELETE FROM content WHERE id_content=?");
         $stmt->bind_param('s', $id);  
         $id = $_GET['d'];
-        
         if ($stmt->execute()):
             $mysqli->close();
             echo "<script>location.href='Galery_Photos.php'</script>";
