@@ -8,9 +8,8 @@
         foreach ($idgalery as $g){
             mysqli_query($mysqli,"INSERT INTO content_galery (id_content,id_galery) 
                 VALUES ('".$idcontent."',".mysqli_real_escape_string($mysqli,$g).")");
-                $mysqli->close(); 
-                
             }
+            $mysqli->close(); 
         header('Location: Galery_Photos.php');
         }
 ?>
