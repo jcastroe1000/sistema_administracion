@@ -10,8 +10,9 @@ $sc = mysql_real_escape_string($_GET["sc"]);
 
 
 //search only by id
-if ($id!=null && $st==null) {
+if ($id!=null && empty($st)) {
     echo 'by id';
+    echo $st;
     $result = $mysqli->query("SELECT id_galery,title_galery,short_description,long_description,creation_date,modification_date, "
             . "status FROM galery WHERE id_galery = '" . $id . "'");
     while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
@@ -44,6 +45,7 @@ if ($id!=null && $st==null) {
     echo $json2;
 } elseif($id!=null && $st!=null) {
     echo 'by id and status';
+  
     $result = $mysqli->query("SELECT id_galery,title_galery,short_description,long_description,creation_date,modification_date, "
             . "status FROM galery WHERE id_galery = '" . $id . "' and status ='" . $st . "'");
     while ($row = $result->fetch_array(MYSQLI_ASSOC)) {
