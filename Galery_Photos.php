@@ -48,7 +48,17 @@
                             <td><?php echo '<img src="php/album/' . $row['route'] . '" class="img-subida" >' ?></img></td>
                             <td><?php echo $row['short_description'] ?></td>
                             <td><?php echo $row['long_description'] ?></td>
-                            <td><?php echo $row['status'] ?></td>
+                            <td>
+                                <?php 
+                                        if ($row['status']=='true'){
+                                            echo 'acitvo';
+                                        }elseif($row['status']=='false') {
+                                            echo 'inactivo';
+                                        }    
+                                    
+                                        
+                                ?>
+                            </td>
                             <td><?php echo $row['creation_date'] ?></td>
                             <td><?php echo $row['modification_date'] ?></td>
                             <td>
@@ -57,9 +67,7 @@
                             <td>
                                 <a class="btn btn-lg btn-danger" data-toggle="modal" data-target="#basicModal" ><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Borrar</a>
                             </td>
-                            <td>
-                                <a class="btn btn-lg btn-primary" href="Assing_Galery.php?u=<?php echo $row['id_content'] ?>"  >Galeria</a>
-                            </td>
+                            
                         </tr>
                     <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
                         <div class="modal-dialog">

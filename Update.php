@@ -47,15 +47,15 @@ endif;
                 </div>
                 <div class="form-group">
                     <label for="gd">Estatus de la galeria</label>
-                        <?php if ($row['status'] == 'activo') { ?>
+                        <?php if ($row['status'] == 'true') { ?>
                             <select class="form-control" id="st" name="status">
-                                <option><?php echo $row['status'] ?></option>
-                                <option>Inactivo</option>
+                                <option value="true">Activa</option>
+                                <option value="false">Inactivo</option>
                             </select>
                         <?php } else {?>
                             <select class="form-control" id="st" name="status">
-                                <option><?php echo $row['status'] ?></option>
-                                <option>activo</option>
+                                <option value="false">Inactiva</option>
+                                <option value="true">Activa</option>
                             </select>
                         <?php } ?>
                 </div>

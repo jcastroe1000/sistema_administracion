@@ -66,8 +66,8 @@ if (isset($_POST['bts'])):
             <div class="form-group">
                 <label for="estatus">Estatus</label>
                 <select class="form-control" id="gd" name="status">
-                    <option value="activo">Activa</option>
-                    <option value="inactivo">Inactivo</option>
+                    <option value=true>Activa</option>
+                    <option value="false">Inactivo</option>
                 </select>
             </div>
             <div class="form-group">

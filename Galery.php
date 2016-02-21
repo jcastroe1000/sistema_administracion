@@ -46,7 +46,15 @@
                             <td><?php echo $row['title_galery'] ?></td>
                             <td><?php echo $row['short_description'] ?></td>
                             <td><?php echo $row['long_description'] ?></td>
-                            <td><?php echo $row['status'] ?></td>
+                            <td>
+                                <?php 
+                                        if ($row['status']=='true'){
+                                            echo 'acitvo';
+                                        }elseif($row['status']=='false') {
+                                            echo 'inactivo';
+                                        }    
+                                ?>
+                            </td>
                             <td><?php echo $row['creation_date'] ?></td>
                             <td><?php echo $row['modification_date'] ?></td>
                             <td><?php echo $row['section'] ?></td>
