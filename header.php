@@ -9,6 +9,7 @@
         <!-- Bootstrap -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
         <link href="css/dataTables.bootstrap.css" rel="stylesheet">
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
     </head>
     <body>
         <p><br/></p>

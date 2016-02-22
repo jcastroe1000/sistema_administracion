@@ -30,7 +30,7 @@
             <select name="galery[]" id="galery" multiple="multiple">
                     <?php
                         
-                        $condition=activo;
+                        $condition='true';
                         $sql = "SELECT id_galery,title_galery from galery WHERE status='".$condition."'";
                         $result = $mysqli2->query($sql);
                         if ($result->num_rows > 0) { 
